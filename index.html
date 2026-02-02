@@ -48,7 +48,7 @@ header {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px; /* espace entre les messages */
+  gap: 12px; /* saut de ligne entre les messages */
 }
 
 .msg {
@@ -158,14 +158,14 @@ function addMessage(text, cls) {
 }
 
 // Message de bienvenue
-addMessage("Assistant\nBonjour, vous avez contacté la société Clarity Systems. En quoi puis-je vous aider ?", "assistant");
+addMessage("Assistant :\nBonjour, vous avez contacté la société Clarity Systems. En quoi puis-je vous aider ?", "assistant");
 
 function send() {
   const input = document.getElementById("input");
   const message = input.value.trim();
   if (!message) return;
 
-  addMessage("Vous\n" + message, "user");
+  addMessage("Vous :\n" + message, "user");
   input.value = "";
 
   fetch(webhookUrl, {
@@ -179,11 +179,11 @@ function send() {
   .then(res => res.json())
   .then(data => {
     if (data.reply) {
-      addMessage("Assistant\n" + data.reply, "assistant");
+      addMessage("Assistant :\n" + data.reply, "assistant");
     }
   })
   .catch(() => {
-    addMessage("Assistant\nUne erreur est survenue. Merci de réessayer.", "assistant");
+    addMessage("Assistant :\nUne erreur est survenue. Merci de réessayer.", "assistant");
   });
 }
 
