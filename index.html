@@ -23,7 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 90vh;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
   overflow: hidden;
 }
 
@@ -40,6 +40,7 @@ header {
   width: 300px;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 #messages {
@@ -48,30 +49,33 @@ header {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px; /* saut de ligne entre les messages */
+  gap: 12px;
 }
 
 .msg {
-  padding: 14px 18px;
+  padding: 14px 20px;
   border-radius: 20px;
   line-height: 1.5;
   word-wrap: break-word;
   font-size: 16px;
   max-width: 75%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   animation: fadeIn 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .assistant {
   align-self: flex-start;
-  background-color: #e0e0e0;
+  background-color: #e6e6e6;
   color: #333;
+  border-top-left-radius: 0;
 }
 
 .user {
   align-self: flex-end;
   background-color: #007bff;
   color: #fff;
+  border-top-right-radius: 0;
 }
 
 #input-area {
@@ -104,7 +108,7 @@ button {
   border-radius: 24px;
   font-size: 16px;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 button:active { opacity: 0.8; }
@@ -116,7 +120,7 @@ button:active { opacity: 0.8; }
 
 @media (max-width: 600px) {
   #chat-container { height: 95vh; }
-  .msg { font-size: 15px; padding: 12px 14px; }
+  .msg { font-size: 15px; padding: 12px 16px; }
   #input { font-size: 15px; padding: 14px 16px; }
   button { font-size: 15px; padding: 14px 16px; }
 }
